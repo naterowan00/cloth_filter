@@ -21,6 +21,7 @@ raw_filter_inf <- read_csv(here("datasets", "filter_influent.csv"))
 unique(raw_filter_eff$parameter)
 unique(raw_filter_inf$parameter)
 
+# a time series plot of ammonia
 raw_filter_eff %>%
   filter(parameter == "Ammonia") %>%
   ggplot(aes(x = date, y = value)) +
