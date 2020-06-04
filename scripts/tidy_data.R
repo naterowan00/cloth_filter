@@ -57,8 +57,9 @@ clean_data <- spread_data %>%
   )
 
 ### Saves the clean data as a .rda file
-save(clean_data, file = "datasets/clean_lab_data.rda")
+saveRDS(clean_data, file = "datasets/clean_lab_data.rda")
 
+### When you want to read the file in: data_name <- readRDS(datasets/clean_lab_data.rda)
 
   
 
