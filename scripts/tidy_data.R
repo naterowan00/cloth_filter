@@ -59,20 +59,6 @@ bc_lab_only[1302, 8] <- 4.4
 bc_lab_only <- bc_lab_only %>%
   slice(c(-1301, -651, -1242, -681, -1272, -724, -726, -1303, -819, -1310, -719, -1304, -1316, -1317, -1311, -1313))
 
-#### Checking out bad rows #### Problems to still fix: 1304/1315, 1305/1316, 1306/1317, 1302/1313
-
-
-#### Plots to figure stuff out #####
-bc_lab_only %>%
-  filter(treatment == "filter", flow == "influent", parameter == "ortho-Phosphate", date > ymd("2019-04-01")) %>%
-  ggplot(aes(x = date, y = value)) +
-    geom_point()
-
-bc_lab_only %>%
-  filter(treatment == "filter", parameter == "TSS (mg/L)") %>% 
-  ggplot(aes(x = date, y = value)) +
-    geom_point(aes(color = flow))
-###################################################################  
 
 ### Spread the parameters to make them columns, merge datetimes, 
 ### convert to datetimes. Row 258 has a problem where the date didn't parse
